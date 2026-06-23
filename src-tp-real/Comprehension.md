@@ -17,21 +17,11 @@ urlencode
 ```
 ```bash
 ```
-
-
-
-
-
 ## CODE NON COMPRIS
+
+## FONCTIONS/CODE TSY KOBO
 ```bash
 $emp_no   = $_GET['emp_no'] ?? '';
 ??
 # je ne suis pas sûre du rôle de cet opérateur et je ne capte pas ce que cette partie veut dire 
 ```
-```bash
-$manager = $current_dept ? get_current_manager($current_dept['dept_no']) : null;
-```
-
-
-
-## FONCTIONS/CODE TSY KOBO
