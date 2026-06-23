@@ -30,7 +30,7 @@ $offset = ($page - 1) * $par_page;
 $nb_pages = (int)ceil($total / $par_page);
 
 
-=======
+
 urlencode
 # raha ny fahazoako azy d c'est pour l'URL satria tsy mety le zavatra misy espace am URL d otrany avadika "+" le ' '
 >>>>>>> bf79a9a7cfd971901521a2c4775624cf88be715c
