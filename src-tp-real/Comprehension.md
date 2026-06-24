@@ -12,7 +12,12 @@ function get_all_lines($sql)
 function get_one_line($sql)
 ```
 ```bash
+Pourquoi des variables error et succes
 ```
+```bash
+Affichage dynamique depuis fonctions
+```
+
 
 ## CODE NON COMPRIS
 ```bash
