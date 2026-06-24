@@ -29,8 +29,9 @@ $nb_pages = (int)ceil($total / $par_page);
 
 ## FONCTIONS/CODE TSY KOBO
 ```bash
+$emp_no   = $_GET['emp_no'] ?? '';
 ??
-# je ne suis pas sûre du rôle de cet opérateur
+# je ne suis pas sûre du rôle de cet opérateur et je ne capte pas ce que cette partie veut dire 
 ```
 
 
