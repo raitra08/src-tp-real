@@ -17,5 +17,5 @@ function dbconnect()
 
     return $connect;
 }
-////
+
 ?>
