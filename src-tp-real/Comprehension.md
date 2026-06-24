@@ -17,12 +17,13 @@ function get_one_line($sql)
 ## CODE NON COMPRIS
 ```bash
 urlencode
-Request method
+Condition Request method
 trim
 $dept_name = $editing ? $editing['dept_name'] : '';
 $existing   = $emp_no_url !== '' ? get_one_employee($emp_no_url) : null;
 $offset = ($page - 1) * $par_page;
 $nb_pages = (int)ceil($total / $par_page);
+
 
 ```
 
