@@ -30,8 +30,14 @@ $offset = ($page - 1) * $par_page;
 $nb_pages = (int)ceil($total / $par_page);
 
 
+=======
+urlencode
+# raha ny fahazoako azy d c'est pour l'URL satria tsy mety le zavatra misy espace am URL d otrany avadika "+" le ' '
+>>>>>>> bf79a9a7cfd971901521a2c4775624cf88be715c
 ```
-
+```bash
+```
+## CODE NON COMPRIS
 
 ## FONCTIONS/CODE TSY KOBO
 ```bash
@@ -39,5 +45,3 @@ $emp_no   = $_GET['emp_no'] ?? '';
 ??
 # je ne suis pas sûre du rôle de cet opérateur et je ne capte pas ce que cette partie veut dire 
 ```
-
-
