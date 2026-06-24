@@ -29,15 +29,34 @@ $existing   = $emp_no_url !== '' ? get_one_employee($emp_no_url) : null;
 $offset = ($page - 1) * $par_page;
 $nb_pages = (int)ceil($total / $par_page);
 
+```
 
-
+```bash
 urlencode
 # raha ny fahazoako azy d c'est pour l'URL satria tsy mety le zavatra misy espace am URL d otrany avadika "+" le ' '
-
 ```
+
 ```bash
 ```
 ## CODE NON COMPRIS
+```bash
+function get_departments_except($dept_no)
+{
+    $sql = "SELECT dept_no, dept_name
+            FROM departments
+            WHERE dept_no <> '%s'
+            ORDER BY dept_name";
+    $sql = sprintf($sql, $dept_no);
+    return get_all_lines($sql);
+}
+# ina no asanle <>
+```
+```bash
+    <p><a href="fiche.php?emp_no=<?= urlencode($emp_no) ?>">&larr; Retour à la fiche</a></p>
+#ina kay le &larr???
+```
+
+
 
 ## FONCTIONS/CODE TSY KOBO
 ```bash
@@ -45,4 +64,3 @@ $emp_no   = $_GET['emp_no'] ?? '';
 ??
 # je ne suis pas sûre du rôle de cet opérateur et je ne capte pas ce que cette partie veut dire 
 ```
-COUCOUUUUUUUU
