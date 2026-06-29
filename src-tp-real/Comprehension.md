@@ -55,7 +55,7 @@ function get_departments_except($dept_no)
     <p><a href="fiche.php?emp_no=<?= urlencode($emp_no) ?>">&larr; Retour à la fiche</a></p>
 #ina kay le &larr???
 ```
-
+<!-- teo amle change_dept ah no tafijery farany -->
 
 
 ## FONCTIONS/CODE TSY KOBO

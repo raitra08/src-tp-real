@@ -26,22 +26,46 @@ function get_one_line($sql){
     return $result;
 }
 
-function get_all_departments()
+// function get_all_departments()
+// {
+//     $sql = "SELECT d.dept_no,
+//                    d.dept_name, 
+//                    CONCAT(e.first_name, ' ', e.last_name) AS manager_name,
+//                    (SELECT COUNT(*)
+//                       FROM dept_emp de
+//                      WHERE de.dept_no = d.dept_no
+//                        AND de.to_date = '9999-01-01') AS nb_employees
+//             FROM departments d
+//             LEFT JOIN dept_manager dm
+//                    ON dm.dept_no = d.dept_no
+//                   AND dm.to_date = '9999-01-01'
+//             LEFT JOIN employees e
+//                    ON e.emp_no = dm.emp_no
+//             ORDER BY d.dept_no";
+//     return get_all_lines($sql);
+// }
+
+function get_all_departments($order)
 {
+    if ($order != "DESC") {
+        $order = "ASC";
+    }
+
     $sql = "SELECT d.dept_no,
-                   d.dept_name, 
+                   d.dept_name,
                    CONCAT(e.first_name, ' ', e.last_name) AS manager_name,
                    (SELECT COUNT(*)
-                      FROM dept_emp de
-                     WHERE de.dept_no = d.dept_no
-                       AND de.to_date = '9999-01-01') AS nb_employees
+                    FROM dept_emp de
+                    WHERE de.dept_no = d.dept_no
+                    AND de.to_date = '9999-01-01') AS nb_employees
             FROM departments d
             LEFT JOIN dept_manager dm
-                   ON dm.dept_no = d.dept_no
-                  AND dm.to_date = '9999-01-01'
+                ON dm.dept_no = d.dept_no
+                AND dm.to_date = '9999-01-01'
             LEFT JOIN employees e
-                   ON e.emp_no = dm.emp_no
-            ORDER BY d.dept_no";
+                ON e.emp_no = dm.emp_no
+            ORDER BY d.dept_name $order";
+
     return get_all_lines($sql);
 }
 
@@ -349,3 +373,82 @@ function get_title_history($emp_no)
     $sql = sprintf($sql, $emp_no);
     return get_all_lines($sql);
 }
+
+
+    // public static Gadra recup_minimum(Gadra[] liste){
+    //     Gadra min = liste[0];
+    //     for(int i = 1; i < liste.length; i++){
+    //         if(!liste[i].isEstTrie()){
+    //             if(min.isEstTrie() || liste[i].getAge() < min.getAge()){
+    //                 min = liste[i];
+    //             }
+    //         }
+    //     }
+    //     return min;
+    // }
+
+    // public static Gadra[] trier_gadra(Gadra[] liste){
+
+    //     Gadra[] resultat = new Gadra[liste.length];
+
+    //     for(int ires = 0; ires < liste.length; ires++){
+    //         Gadra min = recup_minimum(liste);
+    //         resultat[ires] = min;
+    //         min.setEstTrie(true);
+    //     }
+
+    //     for(int i = 0; i < liste.length; i++){
+    //         liste[i].setEstTrie(false);
+    //     }
+
+    //     return resultat;
+    // }
+
+    // public static Gadra recup_minimum_nom(Gadra[] liste){
+    //     Gadra min = liste[0];
+    //     for(int i = 1; i < liste.length; i++){
+    //         if(!liste[i].isEstTrie()){
+    //             if(min.isEstTrie() || liste[i].getNom().compareTo(min.getNom()) < 0){
+    //                 min = liste[i];
+    //             }
+    //         }
+    //     }
+    //     return min;
+    // }
+    
+    // public static Gadra recup_maximum_nom(Gadra[] liste){
+    //     Gadra max = liste[0];
+    //     for(int i = 1; i < liste.length; i++){
+    //         if(!liste[i].isEstTrie()){  //Cet élément n'a pas encore été utilisé dans le tri 
+    //             if(max.isEstTrie() || liste[i].getNom().compareTo(max.getNom()) > 0){
+    //                 max = liste[i];
+    //             }
+    //         }
+    //     }
+    //     return max;
+    // }
+    
+    // public static Gadra[] trier_gadra_nom(Gadra[] liste, boolean ascendant){
+    //     Gadra[] resultat = new Gadra[liste.length];
+
+    //     for(int ires = 0; ires < liste.length; ires++){
+    //         Gadra choisi;
+    //         if(ascendant){
+    //             choisi = recup_minimum_nom(liste);
+    //         }
+    //         else{
+    //             choisi = recup_maximum_nom(liste);
+    //         }
+    //         resultat[ires] = choisi;
+    //         choisi.setEstTrie(true);
+    //     }
+
+    //     for(int i = 0; i < liste.length; i++){
+    //         liste[i].setEstTrie(false);
+    //     }
+
+    //     return resultat;
+    // }
+
+
+
