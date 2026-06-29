@@ -1,7 +1,7 @@
 <?php
     include('../inc/functions.php');
 
-    $departments = get_all_departments_recherche();
+    $departments = get_all_departments();
 
     // Récupération des critères (?? '' évite le warning si le champ est absent)
     $dept_no = $_GET['dept_no'] ?? '';

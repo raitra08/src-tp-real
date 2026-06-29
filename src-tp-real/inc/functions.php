@@ -26,7 +26,7 @@ function get_one_line($sql){
     return $result;
 }
 
-function get_all_departments_recherche()
+function get_all_departments()
 {
     $sql = "SELECT d.dept_no,
                    d.dept_name, 
@@ -45,7 +45,7 @@ function get_all_departments_recherche()
     return get_all_lines($sql);
 }
 
-function get_all_departments($order)
+function get_all_departments_par_ordre($order)
 {
     if ($order != "DESC") {
         $order = "ASC";
@@ -373,6 +373,8 @@ function get_title_history($emp_no)
     $sql = sprintf($sql, $emp_no);
     return get_all_lines($sql);
 }
+
+
 
 
     

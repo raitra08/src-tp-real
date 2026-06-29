@@ -7,7 +7,7 @@ if (isset($_GET['order'])) {
     $order = "ASC";
 }
 
-$departments = get_all_departments($order);
+$departments = get_all_departments_par_ordre($order);
 
 if ($order == "ASC") {
     $nextOrder = "DESC";
